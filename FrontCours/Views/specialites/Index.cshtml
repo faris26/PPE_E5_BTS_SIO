@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Model.specialite>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Liste des spécialités :</h2>
+
+<p>
+    @Html.ActionLink("Ajouté", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Libellé")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LbSpecialite)
+        </td>
+        <td>
+            @*@Html.ActionLink("Éditer", "Edit", new { id=item.id_spe }) |*@
+            @Html.ActionLink("Détails", "Details", new { id=item.IdSpecialite }) |
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.IdSpecialite })
+        </td>
+    </tr>
+}
+
+</table>

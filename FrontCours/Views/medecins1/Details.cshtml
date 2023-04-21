@@ -1,0 +1,74 @@
+﻿@model Model.medecin
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>medecin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Departement.NomRegion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departement.NomRegion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Specialite.LbSpecialite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specialite.LbSpecialite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomMedecin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomMedecin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrenomMedecin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrenomMedecin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdresseMedecin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdresseMedecin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelephoneMedecin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelephoneMedecin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialiteMedecin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialiteMedecin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdMedecin }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

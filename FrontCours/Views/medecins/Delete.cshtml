@@ -1,0 +1,70 @@
+﻿@model Model.medecin
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Supprimer</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Département")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departement.NomDepartement)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Spécialité")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specialite.LbSpecialite)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Nom")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomMedecin)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Prénom")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrenomMedecin)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Adresse")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdresseMedecin)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Téléphone")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelephoneMedecin)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Supprimer" class="btn btn-default" /> |
+            @Html.ActionLink("Retour", "Index")
+        </div>
+    }
+</div>

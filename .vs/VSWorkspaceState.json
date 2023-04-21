@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Back_PPE_SLAM",
+    "\\Back_PPE_SLAM\\Back_PPE_SLAM",
+    "\\Back_PPE_SLAM\\Back_PPE_SLAM\\Controllers",
+    "\\FrontCours",
+    "\\FrontCours\\Controllers",
+    "\\FrontCours\\Views",
+    "\\FrontCours\\Views\\medecins"
+  ],
+  "SelectedNode": "\\FrontCours\\Controllers\\medecinsController.cs",
+  "PreviewInSolutionExplorer": false
+}

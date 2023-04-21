@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Model.medecin>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Liste des médecins :</h2>
+
+@using (Html.BeginForm("SearchMedecins", "medecins", FormMethod.Get))
+{
+    <input type="text" name="nom" placeholder="Nom du médecin">
+    <button type="submit">Rechercher</button>
+}
+
+
+<p>
+    @Html.ActionLink("Ajouter", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Département")
+        </th>
+        <th>
+            @Html.DisplayName("Spécialité")
+        </th>
+        <th>
+            @Html.DisplayName("Nom")
+        </th>
+        <th>
+            @Html.DisplayName("Prénom")
+        </th>
+        <th>
+            @Html.DisplayName("Adresse")
+        </th>
+        <th>
+            @Html.DisplayName("Téléphone")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departement.NomDepartement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specialite.LbSpecialite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomMedecin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrenomMedecin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdresseMedecin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelephoneMedecin)
+            </td>
+            <td>
+                @Html.ActionLink("Modifier", "Edit", new { id = item.IdMedecin }) |
+                @Html.ActionLink("Détails", "Details", new { id = item.IdMedecin }) |
+                @Html.ActionLink("Supprimer", "Delete", new { id = item.IdMedecin })
+            </td>
+        </tr>
+    }
+
+</table>
