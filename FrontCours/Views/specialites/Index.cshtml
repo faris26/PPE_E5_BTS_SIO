@@ -3,6 +3,48 @@
 @{
     ViewBag.Title = "Index";
 }
+<style>
+    h2 {
+        color: blue;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+    }
+
+    td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    a {
+        color: blue;
+        text-decoration: none;
+    }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+</style>
 
 <h2>Liste des spécialités :</h2>
 
@@ -24,8 +66,8 @@
         </td>
         <td>
             @*@Html.ActionLink("Éditer", "Edit", new { id=item.id_spe }) |*@
-            @Html.ActionLink("Détails", "Details", new { id=item.IdSpecialite }) |
-            @Html.ActionLink("Supprimer", "Delete", new { id=item.IdSpecialite })
+            @Html.ActionLink("Détails", "Details", new { id=item.IdSpecialite }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.IdSpecialite }, new { @class = "btn btn-primary" })
         </td>
     </tr>
 }

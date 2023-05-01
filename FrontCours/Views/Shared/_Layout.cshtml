@@ -1,16 +1,60 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mon application ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        /* Styles pour la navbar */
+        .navbar {
+            background-color: #101117;
+            border-radius: 0;
+            border: none;
+        }
 
+        .navbar-brand {
+            color: #fff;
+        }
+
+            .navbar-brand:hover,
+            .navbar-brand:focus {
+                color: #fff;
+            }
+
+        .navbar-nav > li > a {
+            color: #fff;
+        }
+
+            .navbar-nav > li > a:hover,
+            .navbar-nav > li > a:focus {
+                background-color: #292929;
+            }
+
+        .navbar-nav > .active > a,
+        .navbar-nav > .active > a:hover,
+        .navbar-nav > .active > a:focus {
+            background-color: #292929;
+        }
+
+        /* Styles pour le corps de la page */
+        .body-content {
+            padding-top: 70px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 10px 0;
+            text-align: center;
+            background-color: #f8f8f8;
+            border-top: 1px solid #e7e7e7;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#101117">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,12 +75,12 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p style="text-align:center">&copy; @DateTime.Now.Year - Thomas DESCHAMPT PPE SLAM</p>
+            <p>&copy; @DateTime.Now.Year - Faris Maisonneuve</p>
         </footer>
     </div>
 

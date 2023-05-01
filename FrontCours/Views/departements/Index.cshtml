@@ -4,36 +4,64 @@
     ViewBag.Title = "Index";
 }
 
+<style>
+    h2 {
+        color: blue;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+    }
+
+    td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    a {
+        color: blue;
+        text-decoration: none;
+    }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+</style>
 <h2>Liste des départements :</h2>
-
-@*<p>
-    @Html.ActionLink("Ajouter", "Create")
-</p>*@
-<table class="table">
+<table>
     <tr>
-        <th>
-            @Html.DisplayName("Département")
-        </th>
-        <th>
-            @Html.DisplayName("Région")
-        </th>
-        <th></th>
+        <th>Département</th>
+        <th>Région</th>
+        <th>Action</th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomDepartement)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomRegion)
-        </td>
-        <td>
-            @*@Html.ActionLink("Éditer", "Edit", new { id=item.id_dep }) |*@
-            @Html.ActionLink("Détails", "Details", new { id=item.NumeroDepartement })
-           @* @Html.ActionLink("Supprimer", "Delete", new { id=item.id_dep })*@
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.NomDepartement)</td>
+            <td>@Html.DisplayFor(modelItem => item.NomRegion)</td>
+            <td>
+                @Html.ActionLink("Détails", "Details", new { id = item.NumeroDepartement }, new { @class = "btn btn-primary" })
+            </td>
+        </tr>
+    }
 
 </table>
